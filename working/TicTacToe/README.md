@@ -1,1 +1,0 @@
-Simple module with a class that implement the Tic-Tac-Toe game
