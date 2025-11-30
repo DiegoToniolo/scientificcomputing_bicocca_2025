@@ -1,0 +1,1 @@
+A small package created in the Scientific Computing class to learn how to upload packages on PyPI. It allows you to play the Tic Tac Toe game.
