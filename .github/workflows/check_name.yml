@@ -1,4 +1,6 @@
-name: Chack name in readme file
+name: Check name in readme file
+
+run-name: Check my name in readme file
 
 on: 
   push:
@@ -11,7 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - name: Setup repository
+        uses: actions/checkout@v5
+      - name: Check branch
+        run: git branch
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
