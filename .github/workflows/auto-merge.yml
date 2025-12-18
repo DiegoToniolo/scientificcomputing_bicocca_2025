@@ -17,4 +17,4 @@ jobs:
                 fetch-depth: 0
             
             - name: Push to main
-              run: git push origin main
+              run: git push origin HEAD:main
