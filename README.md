@@ -112,4 +112,4 @@ This class is built on top of that taught by [Michael Zingale](https://github.co
 Credit: [xkcd 2582](https://xkcd.com/353/). This actually a Python easter egg... You can truly `pip install antigravity` and `import antigravity`. Try!
 
 ## Working
-The exercises in the working directory are done by Diego Toniolo
+The exercises in the working directory are done by  Toniolo
