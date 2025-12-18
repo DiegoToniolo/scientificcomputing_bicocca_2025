@@ -1,0 +1,20 @@
+name: Auto-merge
+on:
+    workflow_run:
+        workflows: [Check name in readme file]
+        branches: [devel]
+        types: [completed]
+
+jobs:
+    on-success:
+        runs-on: ubuntu-latest
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        steps:
+            - name: Fetch code
+              uses: actions/checkout@v5
+              with:
+                ref: $${{ github.event.workflow_run.head_branch }}
+                fetch-depth: 0
+            
+            - name: Push to main
+              run: git push origin main
