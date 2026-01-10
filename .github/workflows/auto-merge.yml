@@ -17,4 +17,7 @@ jobs:
                 fetch-depth: 0
             
             - name: Push to main
-              run: git push origin HEAD:main
+              run: |
+                git config --global user.name "github-actions[bot]"
+                git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                git push origin HEAD:main
