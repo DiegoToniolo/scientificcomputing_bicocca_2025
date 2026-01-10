@@ -22,6 +22,8 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: devel
           commit-message: "Auto-created PR from ${{ github.ref_name }}"
           title: "Auto PR: ${{ github.ref_name }}"
           body: |
@@ -29,7 +31,5 @@ jobs:
             
             Branch: ${{ github.ref_name }}
             Triggered by: ${{ github.actor }}
-          branch: ${{ github.ref_name }}
-          base: main
           labels: |
             automated-pr
