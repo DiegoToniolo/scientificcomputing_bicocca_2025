@@ -19,17 +19,10 @@ jobs:
           fetch-depth: 0  # Required for proper branch comparison
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          branch: devel
-          commit-message: "Auto-created PR from ${{ github.ref_name }}"
-          title: "Auto PR: ${{ github.ref_name }}"
-          body: |
-            Automated pull request created from push to ${{ github.ref_name }}
-            
-            Branch: ${{ github.ref_name }}
-            Triggered by: ${{ github.actor }}
-          labels: |
-            automated-pr
+        run: gh pr create \
+          --base main \
+          --head devel \
+          --title 'Merge devel into main' \ 
+          --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
