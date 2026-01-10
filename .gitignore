@@ -2,6 +2,8 @@
 *.aux
 *.pyc
 *~
+*.out
+*.toc
 
 .ipynb_checkpoints/
 Untitled*.ipynb
