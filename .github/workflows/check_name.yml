@@ -3,9 +3,7 @@ name: Check name in readme file
 run-name: Check my name in readme file
 
 on: 
-  push:
-    branches:
-      ["devel"]
+  pull_request:
   workflow_dispatch:
 
 jobs:
