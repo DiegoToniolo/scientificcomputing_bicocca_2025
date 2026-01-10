@@ -19,10 +19,6 @@ jobs:
           fetch-depth: 0  # Required for proper branch comparison
 
       - name: Create Pull Request
-        run: gh pr create \
-          --base main \
-          --head devel \
-          --title 'Merge devel into main' \ 
-          --body 'Created by Github action'
+        run: gh pr create --base main --head devel --title 'Merge devel into main' --body 'Created by Github action'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
