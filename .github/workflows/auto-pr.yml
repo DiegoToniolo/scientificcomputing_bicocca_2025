@@ -22,3 +22,15 @@ jobs:
         run: gh pr create --base main --head devel --title 'Merge devel into main' --body 'Created by Github action'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+  auto-merge:
+    needs: create-pull-request
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=$(gh pr list --base main --head devel --state open --json number --jq '.[0].number')
+          gh pr merge $PR_NUMBER --squash --auto
