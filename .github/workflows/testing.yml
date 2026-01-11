@@ -1,0 +1,27 @@
+name: Testing of Shopping Cart class
+
+run-name: Testing of Shopping Cart class
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v5
+      
+      - name: Check branch
+        run: git branch
+    
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+  
+      - name: Run pytest
+        run: |
+          pip install pytest
+          pytest -v
