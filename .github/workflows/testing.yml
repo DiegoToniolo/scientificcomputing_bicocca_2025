@@ -3,6 +3,9 @@ name: Testing of Shopping Cart class
 run-name: Testing of Shopping Cart class
 
 on: 
+  push:
+    branches:
+      [devel]
   workflow_dispatch:
 
 jobs:
